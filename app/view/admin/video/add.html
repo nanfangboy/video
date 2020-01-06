@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="renderer" content="webkit">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="format-detection" content="telephone=no">
+	<link rel="stylesheet" href="/public/static/layui/css/layui.css">
+	<script type="text/javascript" src="/public/static/layui/layui.js"></script>
+	<script type="text/javascript" src="/public/js/video/add.js"></script>
+	<style>
+		/*上传头像*/
+		.a-upon input {
+			opacity: 0;
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 200px;
+			height:200px;
+			background: #00FF00;
+			cursor: pointer;
+		}
+		.span1{width: 139px;height: 2px;position: absolute;top: 100px;left:30px;background: darkcyan;}
+		.span2{width: 3px;height: 139px;position: absolute;top: 30px;left:100px;background: darkcyan;}
+		.a-upon {
+			position: relative;
+			width: 200px;
+			height: 200px;
+			margin-left: 110px;
+			color: #888;
+			cursor: pointer;
+			overflow: hidden;
+			border-radius: 5px;
+			background: #fafafa;
+			border: 1px solid #95aaaa;
+		}
+		.a-upon label{width: 115px;margin: 0 auto;}
+	</style>
+</head>
+<body class="childrenBody">
+	<form class="layui-form">
+		<div class="layui-form-item">
+			<label class="layui-form-label">标题：</label>
+			<div class="layui-input-block" style="width: 600px;margin-top: 30px;">
+				<input type="text" id="title" class="layui-input" lay-verify="required" placeholder="请输入标题名">
+			</div>
+		</div>
+		<div class="layui-form-item">
+				<label class="layui-form-label">类型：</label>
+				<div class="layui-input-block" style="width: 600px;">
+				  <select id="category" lay-verify="required">
+					<option value="">请选择视频的类型</option>
+					<option value="青春">青春</option>
+					<option value="梦想">梦想</option>
+					<option value="偶像">偶像</option>
+					<option value="校园">校园</option>
+					<option value="其它">其它</option>
+				  </select>
+				</div>
+		</div>
+		<div class="layui-form-item">
+			<div class="a-upon layui-inline">
+				<label class="layui-form-label">图片地址</label>
+				<input type="file" name="file" id="file1">
+				<span class="span1"></span>
+				<span class="span2"></span>
+			</div>
+			<div class="a-upon layui-inline">
+				<label class="layui-form-label">视频地址</label>
+				<input type="file" name="file" id="file2">
+				<span class="span1"></span>
+				<span class="span2"></span>
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<label class="layui-form-label">描述：</label>
+			<div class="layui-input-block" style="width: 700px;">
+				<textarea id="description" placeholder="请输入视频描述" class="layui-textarea" lay-verify="required" style="resize: none;"></textarea>
+			</div>
+		</div>
+
+		<div class="layui-form-item">
+			<div class="layui-input-block">
+				<button class="layui-btn" lay-submit="" lay-filter="add">提交</button>
+				<button type="reset" class="layui-btn layui-btn-primary">重置</button>
+		    </div>
+		</div>
+	</form>
+</body>
+</html>

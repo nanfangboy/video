@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="renderer" content="webkit">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="format-detection" content="telephone=no">
+	<link rel="stylesheet" href="/public/static/layui/css/layui.css">
+	<script type="text/javascript" src="/public/static/layui/layui.js"></script>
+	<script type="text/javascript" src="/public/js/user/update.js"></script>
+</head>
+<body class="childrenBody">
+	<form class="layui-form" style="width:50%;">
+		<input type="hidden" id="_id" value="<%=response._id%>">
+
+		<div class="layui-form-item">
+			<label class="layui-form-label">用户名:</label>
+			<div class="layui-input-block">
+				<input type="text" id="username" class="layui-input" lay-verify="required" value="<%=response.username%>">
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<label class="layui-form-label">密码:</label>
+			<div class="layui-input-block">
+				<input type="pass" id="pass" class="layui-input" lay-verify="required" value="<%=response.pass%>">
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<label class="layui-form-label">邮箱:</label>
+			<div class="layui-input-block">
+				<input type="email" id="email" class="layui-input" lay-verify="required" value="<%=response.email%>">
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<div class="layui-input-block">
+				<button class="layui-btn" lay-submit lay-filter="update">提交</button>
+				<button type="reset" class="layui-btn layui-btn-primary">重置</button>
+		    </div>
+		</div>
+	</form>
+</body>
+</html>

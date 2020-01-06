@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>注册</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link href="/public/static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/public/css/style.css" rel="stylesheet">
+    <script src="/public/static/jquery-3.3.1.min.js" type="text/javascript"></script>
+    <script src="/public/static/layer/layer.js" type="text/javascript"></script>
+</head>
+<body>
+<% include header.html %>
+
+<section id="register">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+                <form>
+                    <h2 align="center">用户注册</h2><br>
+                    <div class="input-group">
+                        <span class="input-group-addon">用户名</span>
+                        <input type="text" id="username" class="form-control">
+                    </div><br>
+                    <div class="input-group">
+                        <span class="input-group-addon">密码</span>
+                        <input type="password" id="pass" class="form-control">
+                    </div><br>
+                    <div class="input-group">
+                        <span class="input-group-addon">邮箱</span>
+                        <input type="email" id="email" class="form-control">
+                    </div><br>
+                    <input type="button" id="btn_register" value="注 册" class="btn-info form-control">
+                    <br>
+                </form>
+            </div>
+            <div class="col-md-4"></div>
+        </div>
+    </div>
+</section>
+
+<% include footer.html %>
+
+<script>
+    $("#btn_register").click(function() {
+        $.ajax({
+            url:"/index/user/register",
+            dataType:"text",
+            type:"post",
+            async:true,
+            data:{
+                "username":$("#username").val(),
+                "pass":$("#pass").val(),
+                "email":$("#email").val()
+            }, 
+            success:function(result){
+                console.log(result);
+                // if (Number(result)){
+                //     layer.alert('注册成功',{icon:1},function () {  
+                //          location.href = '/index/login';
+                //     });
+                // }
+                // else{
+                //     layer.alert('注册失败',{icon:2});
+                // }
+            }
+        })
+    })
+</script>
+</body>
+</html>

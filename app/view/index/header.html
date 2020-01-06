@@ -1,0 +1,37 @@
+<!--头部-->
+<section id="header">
+    <nav class="navbar navbar-inverse">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/">小咕咚视频网</a>
+            </div>
+            <div class="collapse navbar-collapse" id="bs">
+                <ul class="nav navbar-nav">
+                    <li><a href="/">首页</a></li>
+                    <li><a href="/index/about">关于我们</a></li>
+                    <%if(username == null){%>
+                    <li><a href="/index/register">注册</a></li>
+                    <li><a href="/index/login">登录</a></li>
+                    <%}else{%>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">你好:<%=username%> <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="/index/user/edit/<%=username%>">个人资料</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="/index/favor/<%=username%>">我的收藏</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="/index/user/logout">用户退出</a></li>
+                                <li role="separator" class="divider"></li>
+                            </ul>
+                        </li>
+                    <%}%>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</section>
